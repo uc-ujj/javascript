@@ -81,3 +81,11 @@ while (numbers.length > 0) {
 
 numbers.unshift(-1);
 console.log(numbers);
+
+// functions
+function timeRemaining(timeElapsed, endTime) {
+  return endTime - timeElapsed;
+}
+
+const timeLeft = timeRemaining(43, 120);
+console.log(timeLeft);
