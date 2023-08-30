@@ -26,13 +26,27 @@ undefined[(1, 2, 3)];
  * 3.0 == 3
  * 3 < 4
  * true || false
- * 
+ *
  */
 
 // To check the type of anything in JavaScript
-typeof(23)
-typeof("Ujjawal")
-typeof([1, 2, 3, 4])
-typeof({lastName: 'Gupta'})
+typeof 23;
+typeof "Ujjawal";
+typeof [1, 2, 3, 4];
+typeof { lastName: "Gupta" };
 
+// Vairables
+var firstName = "Ujjawal";
+const lastName = "Gupta";
+let age = 23;
 
+const items = ["html", "css", "javascript", "react"];
+
+console.log(items);
+console.log(items.length);
+console.log(items[1]);
+
+age++;
+age += 2;
+
+console.log(age);
