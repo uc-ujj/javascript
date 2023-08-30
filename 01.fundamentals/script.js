@@ -54,17 +54,30 @@ console.log(age);
 // Expression and Statements
 
 var age1 = 24;
-age1 = 1 + (age1 * 2)
-
-(age * 2)
+age1 = 1 + age1 * 2;
 
 // Conditions
 if (age > 18) {
-    console.log('You are eligible for voting')
+  console.log("You are eligible for voting");
 } else {
-    console.log('You cannot Vote!!')
+  console.log("You cannot Vote!!");
 }
 
+// Loops
+for (let i = 0; i < items.length; i++) {
+  console.log(items[i]);
+}
 
+for (let lang of items) {
+  console.log(lang);
+}
 
+const numbers = [1, 2, 3, 4];
+// while loop
+while (numbers.length > 0) {
+  let num = numbers.pop();
+  console.log(num);
+}
 
+numbers.unshift(-1);
+console.log(numbers);
