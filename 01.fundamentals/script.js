@@ -50,3 +50,12 @@ age++;
 age += 2;
 
 console.log(age);
+
+// Expression and Statements
+
+var age1 = 24;
+age1 = 1 + (age1 * 2)
+
+(age * 2)
+
+
