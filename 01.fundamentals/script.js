@@ -58,4 +58,13 @@ age1 = 1 + (age1 * 2)
 
 (age * 2)
 
+// Conditions
+if (age > 18) {
+    console.log('You are eligible for voting')
+} else {
+    console.log('You cannot Vote!!')
+}
+
+
+
 
