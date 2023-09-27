@@ -1,0 +1,19 @@
+.grid {
+  width: 200px;
+  height: 400px;
+  background-color: blue;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid div {
+  height: 20px;
+  width: 20px;
+  /* background-color: brown; */
+  /* border: 1px solid black; */
+}
+
+.ball {
+  background-color: purple;
+  border-radius: 50%;
+}
