@@ -1,0 +1,51 @@
+.container {
+  padding-top: 20px;
+  /* display: flex; */
+}
+
+.grid {
+  width: 150px;
+  height: 400px;
+  /* padding: 20px; */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  /* padding-top: 20px; */
+  background-color: #fff;
+  border-left: 5px solid black;
+  border-right: 5px solid black;
+  border-bottom: 5px solid black;
+}
+
+.grid div {
+  height: 40px;
+  width: 50px;
+}
+
+#board {
+  width: 180px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.ball {
+  /* background-color: blue; */
+  border-radius: 50%;
+}
+
+#controls button {
+  padding: 19px;
+}
+
+#controls {
+  display: flex;
+  /* justify-content: space-around; */
+  /* align-items: stretch; */
+  /* width: 160px; */
+}
+
+.taken {
+  /* background-color: chartreuse; */
+}
