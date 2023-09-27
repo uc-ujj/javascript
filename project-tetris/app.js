@@ -16,13 +16,20 @@ for (let i = 0; i < 30; i++) {
 
 let squares = Array.from(document.querySelectorAll(".grid div"));
 
+// squares[0].style.borderBottom = "1px solid black";
+// squares[0].style.borderRadius = "0px";
+// squares[1].style.borderRadius = "0px";
+// squares[1].style.borderBottom = "1px solid black";
+// squares[2].style.borderBottom = "1px solid black";
+// squares[2].style.borderRadius = "0px";
+
 const width = 3;
 let nextRandom = 0;
 
 let score = 0;
 const colors = ["yellow", "skyblue", "purple", "green"];
 
-let currentPosition = -2;
+let currentPosition = 1;
 
 //randomly select a Number for Color
 let random = Math.floor(Math.random() * 4);
