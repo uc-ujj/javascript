@@ -10,11 +10,18 @@ const scoreDisplay = document.querySelector("#score");
 for (let i = 0; i < 30; i++) {
   const div = document.createElement("div");
   div.classList.add("ball");
-  div.textContent = i;
+  // div.textContent = i;
   grid.prepend(div);
 }
 
 let squares = Array.from(document.querySelectorAll(".grid div"));
+
+// squares[0].style.borderBottom = "1px solid black";
+// squares[0].style.borderRadius = "0px";
+// squares[1].style.borderRadius = "0px";
+// squares[1].style.borderBottom = "1px solid black";
+// squares[2].style.borderBottom = "1px solid black";
+// squares[2].style.borderRadius = "0px";
 
 const width = 3;
 let nextRandom = 0;
@@ -22,7 +29,7 @@ let nextRandom = 0;
 let score = 0;
 const colors = ["yellow", "skyblue", "purple", "green"];
 
-let currentPosition = 0;
+let currentPosition = 1;
 
 //randomly select a Number for Color
 let random = Math.floor(Math.random() * 4);
@@ -31,11 +38,14 @@ let current = [3];
 //draw the Ball
 function draw() {
   // squares[currentPosition + 3].classList.add("ball");
+  // if (currentPosition < 3)
+  //   squares[currentPosition].style.backgroundColor = colors[random];
   squares[currentPosition + 3].style.backgroundColor = colors[random];
 }
 
 //undraw the Ball
 function undraw() {
+  // if (currentPosition < 3) squares[currentPosition].style.backgroundColor = "";
   // squares[currentPosition + 3].classList.remove("ball");
   squares[currentPosition + 3].style.backgroundColor = "";
 }
@@ -95,6 +105,7 @@ moveDownBtn.addEventListener("click", () => moveDown());
 function moveDown() {
   undraw();
   currentPosition += width;
+  console.log(currentPosition);
   draw();
   freeze();
 }
@@ -108,7 +119,7 @@ function freeze() {
     random = nextRandom;
     nextRandom = Math.floor(Math.random() * 4);
 
-    currentPosition = 0;
+    currentPosition = 1;
 
     draw();
     addScore();
@@ -181,7 +192,7 @@ function addScore() {
   let prevCol = "";
   for (let j = 0; j < 30; j += 10) {
     for (let k = 0; k < j + 10; k++) {
-      console.log(squares[k].style.backgroundColor);
+      // console.log(squares[k].style.backgroundColor);
     }
   }
 }
@@ -196,9 +207,11 @@ function gameOver() {
     // if (row.every((index) => squares[index].classList.contains("taken"))) {
     //   // const row = [180, 181, 182, 183, 184, 185, 186, 187, 188, 189];
     // }
-    alert(`You scored: ${score}`);
     scoreDisplay.innerHTML = "Game Over";
     clearInterval(timer);
+    setTimeout(() => {
+      alert(`You scored: ${score}`);
+    }, 200);
   }
 }
 
