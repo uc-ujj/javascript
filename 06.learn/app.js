@@ -105,7 +105,7 @@ moveDownBtn.addEventListener("click", () => moveDown());
 function moveDown() {
   undraw();
   currentPosition += width;
-  console.log(currentPosition);
+  // console.log(currentPosition);
   draw();
   freeze();
 }
@@ -188,11 +188,34 @@ function addScore() {
   }
 
   // Score for same Color Column
-  let currCol = squares[0].style.backgroundColor;
-  let prevCol = "";
-  for (let j = 0; j < 30; j += 10) {
-    for (let k = 0; k < j + 10; k++) {
-      // console.log(squares[k].style.backgroundColor);
+  let currCol;
+  let prevCol;
+  let nextCol;
+
+  for (let i = 3; i < 6; i += 1) {
+    // console.log("");
+    // console.log(i);
+
+    for (let j = i + 3; j < 27; j += 3) {
+      // console.log(j);
+
+      prevCol = squares[j - 3].style.backgroundColor;
+      currCol = squares[j].style.backgroundColor;
+      nextCol = squares[j + 3].style.backgroundColor;
+
+      if (
+        (prevCol || currCol || nextCol) &&
+        (prevCol === currCol) & (prevCol === nextCol)
+      ) {
+        score += 10;
+        squares[j - 3].style.backgroundColor = "";
+        squares[j].style.backgroundColor = "";
+        squares[j + 3].style.backgroundColor = "";
+
+        squares[j - 3].classList.remove("taken");
+        squares[j].classList.remove("taken");
+        squares[j + 3].classList.remove("taken");
+      }
     }
   }
 }
@@ -218,3 +241,8 @@ function gameOver() {
 draw();
 timer = setInterval(moveDown, time);
 nextRandom = Math.floor(Math.random() * 4);
+
+// Add textContent on squares for reference
+// for (let i = 0; i < squares.length; i++) {
+//   squares[i].textContent = i;
+// }
